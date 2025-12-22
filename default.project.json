@@ -1,0 +1,14 @@
+{
+  "name": "anti-backdoor-plugin",
+  "tree": {
+    "$className": "DataModel",
+
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "AntiBackdoorPlugin": {
+        "$className": "Folder",
+        "$path": "src"
+      }
+    }
+  }
+}
