@@ -63,7 +63,7 @@ function MainFrame.CreateSettingsFrame(parent: Frame)
 	config1Text.Name = "Config1"
 	config1Text.TextXAlignment = Enum.TextXAlignment.Left
 	config1Text.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
-	config1Text.Size = UDim2.new(1, 0, 0.179, 0)
+	config1Text.Size = UDim2.new(1, 0, 0, 35)
 	config1Text.TextScaled = true
 	config1Text.TextWrapped = true
 	config1Text.Font = Enum.Font.GothamBold
@@ -117,8 +117,8 @@ function MainFrame.CreateServicesFrame(parent: Frame)
 	servicesFrame.Visible = false
 
 	local grid = Instance.new("UIGridLayout")
-	grid.CellSize = UDim2.new(0.235, 0, 0.2, 0)
-	grid.CellPadding = UDim2.new(0.015, 0, 0.025, 0)
+	grid.CellSize = UDim2.new(0, 68, 0, 40)
+	grid.CellPadding = UDim2.new(0, 4, 0, 5)
 	grid.Parent = servicesFrame
 
 	return servicesFrame
@@ -140,7 +140,7 @@ function MainFrame.CreateWhiteListFrame(parent: Frame)
 
 	local layout = Instance.new("UIListLayout")
 	layout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-	layout.Padding = UDim.new(0.01, 0)
+	layout.Padding = UDim.new(0, 3)
 	layout.Parent = whiteListFrame
 
 	local textBoxTemplate = Instance.new("TextBox")
@@ -148,7 +148,7 @@ function MainFrame.CreateWhiteListFrame(parent: Frame)
 	textBoxTemplate.Text = ""
 	textBoxTemplate.BorderSizePixel = 0
 	textBoxTemplate.AnchorPoint = Vector2.new(0.5, 0.5)
-	textBoxTemplate.Size = UDim2.new(0.977, 0, 0.09, 0)
+	textBoxTemplate.Size = UDim2.new(0.977, 0, 0, 35)
 	textBoxTemplate.FontFace = Font.fromName("Montserrat", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 	textBoxTemplate.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
 	textBoxTemplate.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
@@ -180,7 +180,7 @@ function MainFrame.CreateWhiteListFrame(parent: Frame)
 	addButton.Name = "AddButton"
 	addButton.BorderSizePixel = 0
 	addButton.AnchorPoint = Vector2.new(0.5, 0.5)
-	addButton.Size = UDim2.new(0.977, 0, 0.09, 0)
+	addButton.Size = UDim2.new(0.977, 0, 0, 35)
 	addButton.FontFace = Font.fromName("Montserrat", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
 	addButton.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
 	addButton.TextColor3 = Color3.fromRGB(255, 255, 255)

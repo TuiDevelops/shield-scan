@@ -28,7 +28,7 @@ backdoor patterns.
 ## Installation
 
 ### Option 1 – Roblox Creator Store
-Install Shield Scan directly from the Roblox Creator Store.
+Install Shield Scan directly from the Roblox Creator Store. You can find it [here](https://create.roblox.com/store/asset/118988717840663/ShieldScan)
 
 - Automatic updates
 - Easy installation

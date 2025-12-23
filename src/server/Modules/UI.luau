@@ -3,6 +3,7 @@ local UI = {}
 
 local widget
 local root = script.Parent.Parent
+local VERSION = "v1.0.0"
 
 -- Modules
 local Services = require(root.Modules.Services)
@@ -79,7 +80,7 @@ function UI.init(plugin)
 
 	widget = plugin:CreateDockWidgetPluginGui("ShieldScanWidget", info)
 
-	widget.Title = "ShieldScan"
+	widget.Title = "ShieldScan " .. VERSION
 
 	-- root UI
 	local frame = Instance.new("Frame")

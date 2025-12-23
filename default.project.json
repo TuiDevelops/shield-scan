@@ -5,7 +5,7 @@
 
     "ServerStorage": {
       "$className": "ServerStorage",
-      "AntiBackdoorPlugin": {
+      "ShieldScan": {
         "$className": "Folder",
         "$path": "src"
       }

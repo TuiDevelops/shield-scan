@@ -56,6 +56,4 @@ return {
 	"webhook",
 	"rotate",
 	"dih",
-	"hi",
-	"cool",
 }

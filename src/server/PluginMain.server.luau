@@ -1,9 +1,12 @@
+local VERSION = "v1.0.0"
+
+-- services
 local ServerStorage = game:GetService("ServerStorage")
 
 -- creates toolbar
 local toolbar = plugin:CreateToolbar("ShieldScan")
 local openButton = toolbar:CreateButton(
-	"ShieldScan",
+	"ShieldScan " .. VERSION,
 	"An open source anti-backboor plugin created by TuiDevelops",
 	"rbxassetid://127756562383604"
 )
