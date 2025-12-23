@@ -21,6 +21,8 @@ function MainFrame.CreateMainFrame(parent: Frame)
 	return list
 end
 
+-- CHILDREN OF THE MAIN FRAME
+
 function MainFrame.CreateInternalContainer(parent: Frame)
 	-- internal container (IMPORTANT)
 	local resultsContainer = Instance.new("Frame")
@@ -151,7 +153,7 @@ function MainFrame.CreateWhiteListFrame(parent: Frame)
 	textBoxTemplate.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
 	textBoxTemplate.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
 	textBoxTemplate.TextColor3 = Color3.fromRGB(255, 255, 255)
-	textBoxTemplate.TextXAlignment = Enum.TextXAlignment.Center
+	textBoxTemplate.TextXAlignment = Enum.TextXAlignment.Left
 	textBoxTemplate.TextScaled = true
 	textBoxTemplate.PlaceholderText = "Write the name of a folder or script here"
 	textBoxTemplate.LayoutOrder = 0
@@ -160,13 +162,19 @@ function MainFrame.CreateWhiteListFrame(parent: Frame)
 
 	local uiPadding = Instance.new("UIPadding")
 	uiPadding.PaddingLeft = UDim.new(0.05, 0)
-	uiPadding.PaddingRight = UDim.new(0.05, 0)
+	uiPadding.PaddingRight = UDim.new(0.1, 0)
 	uiPadding.Parent = textBoxTemplate
 
-	local clone = textBoxTemplate:Clone()
-	clone.Name = "Whitelisted"
-	clone.Parent = whiteListFrame
-	clone.Visible = true
+	local destroyTextBoxButton = Instance.new("ImageButton")
+	destroyTextBoxButton.BackgroundTransparency = 1
+	destroyTextBoxButton.BorderSizePixel = 0
+	destroyTextBoxButton.ImageColor3 = Color3.fromRGB(255, 80, 80)
+	destroyTextBoxButton.Name = "DestroyTextBox"
+	destroyTextBoxButton.Image = "rbxassetid://128372145651723"
+	destroyTextBoxButton.AnchorPoint = Vector2.new(0.5, 0.5)
+	destroyTextBoxButton.Position = UDim2.new(1.05, 0, 0.5, 0)
+	destroyTextBoxButton.Size = UDim2.new(0.082, 0, 0.57, 0)
+	destroyTextBoxButton.Parent = textBoxTemplate
 
 	local addButton = Instance.new("TextButton")
 	addButton.Name = "AddButton"
@@ -199,6 +207,17 @@ function MainFrame.CreateWhiteListFrame(parent: Frame)
 		newClone.Name = "Whitelisted"
 		newClone.Parent = whiteListFrame
 		newClone.Visible = true
+
+		for _, v in whiteListFrame:GetChildren() do
+			if v:IsA("TextBox") and v.Name == "Whitelisted" then
+				local button = v:FindFirstChild("DestroyTextBox")
+				if button then
+					button.MouseButton1Click:Connect(function()
+						v:Destroy()
+					end)
+				end
+			end
+		end
 	end)
 
 	return whiteListFrame

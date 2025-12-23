@@ -107,7 +107,9 @@ UI.settingsFrame.Config1.ToggleButton.MouseButton1Click:Connect(function()
 
 	if activated then
 		activated = false
+		Configs.Config1.activated = false
 		toggleButton.CheckImage.Visible = false
+
 		local oldFolder = ServerStorage:FindFirstChild("Suspicious Scripts")
 		if oldFolder then
 			oldFolder:Destroy()
@@ -116,7 +118,9 @@ UI.settingsFrame.Config1.ToggleButton.MouseButton1Click:Connect(function()
 		end
 	else
 		activated = true
+		Configs.Config1.activated = true
 		toggleButton.CheckImage.Visible = true
+
 		if ServerStorage:FindFirstChild("Suspicious Scripts") then
 			warn("Folder already exists")
 			return

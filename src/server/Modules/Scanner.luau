@@ -54,14 +54,12 @@ local function findBackdoor(inst, found)
 					local activated = Configs.Config1.activated
 					if activated then
 						pcall(function()
-							print(activated, Configs.Config1, Configs.Config1.activated)
 							inst:SetAttribute("Suspect", true)
 							inst:AddTag("Suspect", true)
 							inst.Parent = ServerStorage:FindFirstChild("Suspicious Scripts")
 						end)
 					else
 						pcall(function()
-							print(activated, Configs.Config1, Configs.Config1.activated)
 							inst:SetAttribute("Suspect", true)
 							inst:AddTag("Suspect", true)
 						end)
