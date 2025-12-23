@@ -5,7 +5,7 @@ local toolbar = plugin:CreateToolbar("ShieldScan")
 local openButton = toolbar:CreateButton(
 	"ShieldScan",
 	"An open source anti-backboor plugin created by TuiDevelops",
-	"rbxassetid://109786044386715"
+	"rbxassetid://127756562383604"
 )
 
 local root = script.Parent

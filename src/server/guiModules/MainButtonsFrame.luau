@@ -30,7 +30,7 @@ function MainButtonsFrame.CreateMainButton(asset: string, layoutOrder: number, b
 	image.BackgroundTransparency = 1
 	image.Image = asset
 	image.AnchorPoint = Vector2.new(0.5, 0.5)
-	image.Size = UDim2.new(0.622, 0, 0.618, 0)
+	image.Size = UDim2.new(0.8, 0, 0.8, 0)
 	image.Position = UDim2.new(0.487, 0, 0.588, 0)
 	image.Parent = newButton
 

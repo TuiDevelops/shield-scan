@@ -92,25 +92,16 @@ function UI.init(plugin)
 
 	-- main buttons frame
 	local mainButtonsFrame = MainButtonsFrame.CreateFrame(frame)
-	local scanButton = MainButtonsFrame.CreateMainButton(
-		"http://www.roblox.com/asset/?id=132243012616439",
-		0,
-		"Scan",
-		mainButtonsFrame
-	)
+	local scanButton = MainButtonsFrame.CreateMainButton("rbxassetid://108209380749996", 0, "Scan", mainButtonsFrame)
 
 	local settingsButton =
-		MainButtonsFrame.CreateMainButton("http://www.roblox.com/asset/?id=7059346373", 3, "Settings", mainButtonsFrame)
+		MainButtonsFrame.CreateMainButton("rbxassetid://115733686981088", 3, "Settings", mainButtonsFrame)
 
-	local whiteListButton = MainButtonsFrame.CreateMainButton(
-		"http://www.roblox.com/asset/?id=129353856287806",
-		2,
-		"White List",
-		mainButtonsFrame
-	)
+	local whiteListButton =
+		MainButtonsFrame.CreateMainButton("rbxassetid://135176127596235", 2, "White List", mainButtonsFrame)
 
 	local servicesButton =
-		MainButtonsFrame.CreateMainButton("http://www.roblox.com/asset/?id=7744394226", 1, "Services", mainButtonsFrame)
+		MainButtonsFrame.CreateMainButton("rbxassetid://128141811125749", 1, "Services", mainButtonsFrame)
 
 	-- suspects text
 	local sectionText = SectionText.CreateText(frame)
