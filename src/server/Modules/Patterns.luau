@@ -6,7 +6,6 @@ return {
 	"loadstring",
 	"pcall%s*%(%s*require",
 	"pcall",
-	"string",
 	"math",
 	"luraph",
 	"xen",
@@ -25,6 +24,7 @@ return {
 	-- asset insertion
 	"InsertService",
 	"GetObjects",
+	"GetObject",
 
 	-- suspicious loops
 	"while%s+true%s+do",
@@ -33,11 +33,18 @@ return {
 	-- sites
 	"github",
 	"repo",
+	"repository",
 	"discord",
 
 	-- hidden events
 	"RemoteEvent",
 	"BindableEvent",
+
+	-- known modules
+	"Yueliang",
+	"Yue",
+	"fiOne",
+	"fione",
 
 	-- suspicious variables
 	"a=",
@@ -51,7 +58,6 @@ return {
 	"anti.backboor",
 	"synapse",
 	"exploit",
-	"loading",
 	"Joint",
 	"webhook",
 	"rotate",
