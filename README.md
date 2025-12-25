@@ -1,5 +1,15 @@
 <h1 align="center">Shield Scan</h1> 
 
+<div align="center">
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/TuiDevelops/shield-scan?style=for-the-badge" height="25px"> 
+  <img alt="GitHub languages" src="https://img.shields.io/github/languages/count/TuiDevelops/shield-scan?style=for-the-badge" height="25px"> 
+  <img alt="GitHub forks" src="https://img.shields.io/github/forks/TuiDevelops/shield-scan?style=for-the-badge" height="25px"> 
+  <img alt="GitHub issues or pr" src="https://img.shields.io/github/issues/TuiDevelops/shield-scan?style=for-the-badge" height="25px"> 
+  <img alt="GitHub issues or pr" src="https://img.shields.io/github/issues-pr/TuiDevelops/shield-scan?style=for-the-badge" height="25px"> 
+  <img alt="GitHub stars" src="https://img.shields.io/github/stars/TuiDevelops/shield-scan?style=for-the-badge" height="25px"> 
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/TuiDevelops/shield-scan?style=for-the-badge" height="25px"> 
+</div>
+
 !["Logo"](assets/shieldscan.png)
 
 ## What it Shield Scan?
