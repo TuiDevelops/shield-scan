@@ -1,5 +1,5 @@
 local Configs = {
-	["Config1"] = {
+	["Quarantine"] = {
 		title = "Move suspicious scripts to a folder automatically?",
 		activated = false,
 	},

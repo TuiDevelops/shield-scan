@@ -1,4 +1,4 @@
-local VERSION = "v1.0.0"
+local VERSION = "v1.1.0"
 
 -- services
 local ServerStorage = game:GetService("ServerStorage")
@@ -7,7 +7,7 @@ local ServerStorage = game:GetService("ServerStorage")
 local toolbar = plugin:CreateToolbar("ShieldScan")
 local openButton = toolbar:CreateButton(
 	"ShieldScan " .. VERSION,
-	"An open source anti-backboor plugin created by TuiDevelops",
+	"An open source anti-backdoor plugin created by TuiDevelops",
 	"rbxassetid://127756562383604"
 )
 
@@ -103,14 +103,14 @@ UI.settingsButton.MouseButton1Click:Connect(function()
 end)
 
 -- config 1 --> toggle button
-local activated = Configs.Config1.activated
+local activated = Configs.Quarantine.activated
 UI.settingsFrame.Config1.ToggleButton.MouseButton1Click:Connect(function()
 	local config1 = UI.settingsFrame.Config1
 	local toggleButton = config1.ToggleButton
 
 	if activated then
 		activated = false
-		Configs.Config1.activated = false
+		Configs.Quarantine.activated = false
 		toggleButton.CheckImage.Visible = false
 
 		local oldFolder = ServerStorage:FindFirstChild("Suspicious Scripts")
@@ -121,7 +121,7 @@ UI.settingsFrame.Config1.ToggleButton.MouseButton1Click:Connect(function()
 		end
 	else
 		activated = true
-		Configs.Config1.activated = true
+		Configs.Quarantine.activated = true
 		toggleButton.CheckImage.Visible = true
 
 		if ServerStorage:FindFirstChild("Suspicious Scripts") then

@@ -11,6 +11,8 @@ return {
 	"xen",
 	"brew",
 	"IsStudio",
+	"eriuqer",
+	":reverse()",
 
 	-- game info
 	"game.CreatorId",
@@ -54,8 +56,8 @@ return {
 	"local abc",
 
 	-- keywords
-	"backboor",
-	"anti.backboor",
+	"backdoor",
+	"anti.backdoor",
 	"synapse",
 	"exploit",
 	"Joint",

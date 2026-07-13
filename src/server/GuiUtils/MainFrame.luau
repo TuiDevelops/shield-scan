@@ -1,7 +1,6 @@
-local TextService = game:GetService("TextService")
 local MainFrame = {}
 
-local root = script.Parent.Parent
+local _root = script.Parent.Parent
 
 function MainFrame.CreateMainFrame(parent: Frame)
 	local list = Instance.new("ScrollingFrame")
@@ -23,7 +22,7 @@ end
 
 -- CHILDREN OF THE MAIN FRAME
 
-function MainFrame.CreateInternalContainer(parent: Frame)
+function MainFrame.CreateInternalContainer(parent: ScrollingFrame)
 	-- internal container (IMPORTANT)
 	local resultsContainer = Instance.new("Frame")
 	resultsContainer.Name = "ResultsContainer"

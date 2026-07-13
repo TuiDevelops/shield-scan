@@ -1,21 +1,20 @@
-local ProximityPromptService = game:GetService("ProximityPromptService")
 local UI = {}
 
 local widget
 local root = script.Parent.Parent
-local VERSION = "v1.0.0"
+local VERSION = "v1.1.0"
 
 -- Modules
 local Services = require(root.Modules.Services)
 local ServicesToBeScanned = require(root.Modules:WaitForChild("ServicesToBeScanned"))
 
 -- gui modules
-local PluginTitle = require(root.guiModules.PluginTitle)
-local MainButtonsFrame = require(root.guiModules.MainButtonsFrame)
-local SectionText = require(root.guiModules.SectionText)
-local MainFrame = require(root.guiModules.MainFrame)
-local DeleteAllButton = require(root.guiModules.DeleteAllButton)
-local SubmitWhiteListButton = require(root.guiModules.SubmitWhiteListButton)
+local PluginTitle = require(root.GuiUtils.PluginTitle)
+local MainButtonsFrame = require(root.GuiUtils.MainButtonsFrame)
+local SectionText = require(root.GuiUtils.SectionText)
+local MainFrame = require(root.GuiUtils.MainFrame)
+local DeleteAllButton = require(root.GuiUtils.DeleteAllButton)
+local SubmitWhiteListButton = require(root.GuiUtils.SubmitWhiteListButton)
 
 local function ServicesFrameHandler(servicesFrame)
 	local function updateServiceButtons()
@@ -39,8 +38,6 @@ local function ServicesFrameHandler(servicesFrame)
 		serviceButton.BackgroundColor3 = Color3.fromRGB(50, 120, 220)
 		serviceButton.TextXAlignment = Enum.TextXAlignment.Center
 		serviceButton.Parent = servicesFrame
-
-		local activated = false
 
 		serviceButton.MouseButton1Click:Connect(function()
 			if service == "All Services" then
