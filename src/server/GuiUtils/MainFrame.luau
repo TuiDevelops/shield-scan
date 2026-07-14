@@ -59,7 +59,7 @@ function MainFrame.CreateSettingsFrame(parent: Frame)
 	layout.Parent = settingsFrame
 
 	local config1Text = Instance.new("TextLabel")
-	config1Text.Name = "Config1"
+	config1Text.Name = "Quarantine"
 	config1Text.TextXAlignment = Enum.TextXAlignment.Left
 	config1Text.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
 	config1Text.Size = UDim2.new(1, 0, 0, 35)

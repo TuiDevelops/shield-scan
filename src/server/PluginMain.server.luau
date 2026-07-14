@@ -1,4 +1,4 @@
-local VERSION = "v1.1.0"
+local VERSION = "v1.2.0"
 
 -- services
 local ServerStorage = game:GetService("ServerStorage")
@@ -7,7 +7,7 @@ local ServerStorage = game:GetService("ServerStorage")
 local toolbar = plugin:CreateToolbar("ShieldScan")
 local openButton = toolbar:CreateButton(
 	"ShieldScan " .. VERSION,
-	"An open source anti-backdoor plugin created by TuiDevelops",
+	"An open source anti-backdoor plugin created by Tui",
 	"rbxassetid://127756562383604"
 )
 
@@ -70,8 +70,17 @@ UI.scanButton.MouseButton1Click:Connect(function()
 		return
 	end
 
-	for _, item in results do
-		UI.addResult(item.script:GetFullName() .. "  |  " .. item.pattern)
+	for _, item in ipairs(results) do
+		local header =
+			string.format("[%s] (%d) %s [%s]", item.risk, item.score, item.instance:GetFullName(), item.source)
+
+		UI.addResult(header)
+
+		for _, match in ipairs(item.matches) do
+			local shown = match.display or match.matched or match.pattern
+
+			UI.addResult(string.format("   +%d %s (%s) x%d", match.score, match.reason, shown, match.occurrences or 1))
+		end
 	end
 end)
 
@@ -102,30 +111,23 @@ UI.settingsButton.MouseButton1Click:Connect(function()
 	UI.sectionText.TextColor3 = Color3.fromRGB(71, 151, 255)
 end)
 
--- config 1 --> toggle button
+-- Quarantine Config --> toggle button
 local activated = Configs.Quarantine.activated
-UI.settingsFrame.Config1.ToggleButton.MouseButton1Click:Connect(function()
-	local config1 = UI.settingsFrame.Config1
-	local toggleButton = config1.ToggleButton
+UI.settingsFrame.Quarantine.ToggleButton.MouseButton1Click:Connect(function()
+	local quarantine = UI.settingsFrame.Quarantine
+	local toggleButton = quarantine.ToggleButton
 
 	if activated then
 		activated = false
 		Configs.Quarantine.activated = false
 		toggleButton.CheckImage.Visible = false
-
-		local oldFolder = ServerStorage:FindFirstChild("Suspicious Scripts")
-		if oldFolder then
-			oldFolder:Destroy()
-		else
-			warn("Old Folder not found")
-		end
 	else
 		activated = true
 		Configs.Quarantine.activated = true
 		toggleButton.CheckImage.Visible = true
 
 		if ServerStorage:FindFirstChild("Suspicious Scripts") then
-			warn("Folder already exists")
+			warn("Suspicious Scripts Folder already exists")
 			return
 		else
 			local newFolder = Instance.new("Folder")
@@ -157,8 +159,10 @@ end)
 -- connect delete all button
 UI.deleteButton.MouseButton1Click:Connect(function()
 	for _, item in results do
-		local backdoor = item.script
-		print("Destroying suspicious script:", backdoor)
-		backdoor:Destroy()
+		local suspect = item.instance
+		if suspect and suspect.Parent then
+			print("Destroying suspicious script:", suspect)
+			suspect:Destroy()
+		end
 	end
 end)

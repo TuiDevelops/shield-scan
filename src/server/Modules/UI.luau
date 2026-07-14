@@ -2,7 +2,7 @@ local UI = {}
 
 local widget
 local root = script.Parent.Parent
-local VERSION = "v1.1.0"
+local VERSION = "v1.2.0"
 
 -- Modules
 local Services = require(root.Modules.Services)
@@ -152,14 +152,23 @@ end
 -- Adds item to list
 function UI.addResult(text)
 	local item = Instance.new("TextLabel")
-	item.Size = UDim2.new(1, -12, 0, 40)
+
+	item.AutomaticSize = Enum.AutomaticSize.Y
+	item.Size = UDim2.new(1, -12, 0, 0)
+
 	item.TextWrapped = true
 	item.TextXAlignment = Enum.TextXAlignment.Left
-	item.Text = text
+	item.TextYAlignment = Enum.TextYAlignment.Top
+
 	item.Font = Enum.Font.Code
 	item.TextSize = 13
+
+	item.Text = text
+
 	item.TextColor3 = Color3.fromRGB(255, 168, 97)
+
 	item.BackgroundTransparency = 1
+
 	item.Parent = UI.resultsContainer
 end
 
